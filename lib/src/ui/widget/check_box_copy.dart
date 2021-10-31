@@ -48,10 +48,10 @@ class Checkbox extends StatefulWidget {
   ///
   /// The value of [tristate] must not be null.
   const Checkbox({
-    Key key,
-    @required this.value,
+    Key? key,
+    required this.value,
     this.tristate = false,
-    @required this.onChanged,
+    required this.onChanged,
     this.activeColor,
     this.checkColor,
     this.materialTapTargetSize,
@@ -96,9 +96,9 @@ class Checkbox extends StatefulWidget {
   /// The color to use when this checkbox is checked.
   ///
   /// Defaults to [ThemeData.toggleableActiveColor].
-  final Color activeColor;
+  final Color? activeColor;
 
-  final Color checkColor;
+  final Color? checkColor;
 
   /// If true the checkbox's [value] can be true, false, or null.
   ///
@@ -119,7 +119,7 @@ class Checkbox extends StatefulWidget {
   /// See also:
   ///
   ///   * [MaterialTapTargetSize], for a description of how this affects tap targets.
-  final MaterialTapTargetSize materialTapTargetSize;
+  final MaterialTapTargetSize? materialTapTargetSize;
 
   /// The width of a checkbox widget.
   static const double width = 18.0;
@@ -133,7 +133,7 @@ class _CheckboxState extends State<Checkbox> with TickerProviderStateMixin {
   Widget build(BuildContext context) {
     assert(debugCheckHasMaterial(context));
     final ThemeData themeData = Theme.of(context);
-    Size size;
+    late Size size;
     switch (widget.materialTapTargetSize ?? themeData.materialTapTargetSize) {
       case MaterialTapTargetSize.padded:
         size = const Size(
