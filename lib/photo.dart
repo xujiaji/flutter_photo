@@ -95,13 +95,9 @@ class PhotoPicker {
     List<AssetPathEntity>? photoPathList,
     List<AssetEntity>? pickedAssetList,
   }) {
-    assert(provider != null, "provider must be not null");
-    assert(context != null, "context must be not null");
-    assert(pickType != null, "pickType must be not null");
-
-    themeColor ??= Theme.of(context)?.primaryColor ?? Colors.black;
-    dividerColor ??= Theme.of(context)?.dividerColor ?? Colors.grey;
-    disableColor ??= Theme.of(context)?.disabledColor ?? Colors.grey;
+    themeColor ??= Theme.of(context).primaryColor;
+    dividerColor ??= Theme.of(context).dividerColor;
+    disableColor ??= Theme.of(context).disabledColor;
     textColor ??= Colors.white;
 
     sortDelegate ??= SortDelegate.common;

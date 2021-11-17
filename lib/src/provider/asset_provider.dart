@@ -30,7 +30,7 @@ class AssetProvider {
 
   bool get noMore => getPaging()?.noMore ?? false;
 
-  int get count => data?.length ?? 0;
+  int get count => data.length;
 }
 
 class AssetPaging {
